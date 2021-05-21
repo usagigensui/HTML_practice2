@@ -25,11 +25,16 @@ p {
   margin-bottom: 30px;
 }
 
+ul {
+  list-style: none;
+}
+
 header {
   width: 100%;
   height: 70px;
   background-color: #ec715f;
 }
+
 .nav-ber {
   width: 1024px;
   margin: 0 auto;
@@ -39,6 +44,10 @@ header {
 
 #logo {
   height: 70px;
+}
+
+.menu-box {
+  display: none;
 }
 
 .nav-list {
@@ -168,7 +177,7 @@ header {
 
 .feature-box p {
   text-align: left;
-  padding: 0;
+  margin: 0;
 }
 
 #profile {
@@ -178,7 +187,7 @@ header {
   color: #000;
 }
 
-.profole-list {
+.profile-list {
   width: 1024px;
   padding-bottom: 90px;
   margin: 0 auto;
@@ -273,4 +282,221 @@ footer {
   font-size: 16px;
   color: #fafafa;
   text-align: center;
+}
+
+/* レスポンシブ対応　画面幅768px以下 */
+
+@media screen and (max-width: 768px) {
+  .text-area {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  header {
+    height: 50px;
+    position: fixed;
+  }
+
+  .nav-ber {
+    width: 90%;
+    height: 50px;
+  }
+
+  #logo {
+    height: 50px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .header-space {
+    width: 100%;
+    height: 50px;
+  }
+
+  /* ハンバーガーメニュー */
+
+  .menu-box {
+    display: block;
+    margin-top: 5px;
+    border: 1px solid #fafafa;
+  }
+  .menu-hidden {
+    display: none;
+  }
+
+  .menu-open {
+    display: flex;
+    width: 38px;
+    height: 38px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  .menu-open span,
+  .menu-open span::before,
+  .menu-open span::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    border-radius: 3px;
+    background: #fafafa;
+    transition: 0.5s;
+    position: absolute;
+  }
+
+  .menu-open span::before {
+    bottom: 8px;
+  }
+
+  .menu-open span::after {
+    top: 8px;
+  }
+
+  #menu-check:checked ~ .menu-open span {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #menu-check:checked ~ .menu-open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+    background: #000;
+  }
+
+  #menu-check:checked ~ .menu-open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background: #000;
+  }
+
+  .menu-content {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+
+  #menu-check:checked ~ .menu-content {
+    left: 0;
+  }
+
+  .menu-item {
+    text-decoration: none;
+    margin: 10px 0;
+  }
+
+  .menu-item a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  /* メインビジュアル */
+
+  #main-visual {
+    background-image: url(img/code.png);
+  }
+
+  #main-visual h1 {
+    padding-top: 200px;
+    font-size: 40px;
+  }
+
+  #main-visual p {
+    font-size: 18px;
+  }
+
+  /* portfolio */
+
+  .portfolio-list {
+    width: 300px;
+  }
+
+  .portfolio-img {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .portfolio-img:last-child {
+    margin-bottom: 0;
+  }
+
+  .portfolio-img:nth-child(1) {
+    display: none;
+  }
+
+  .portfolio-img:nth-child(3) {
+    display: none;
+  }
+
+  .portfolio-img:nth-child(5) {
+    display: none;
+  }
+
+  /* Feature */
+
+  .feature-list {
+    width: 90%;
+  }
+
+  .feature-box {
+    margin: 0 auto 10px;
+  }
+
+  .feature-box:nth-child(3n) {
+    margin: 0 auto;
+  }
+
+  /* Profile */
+
+  .profile-list {
+    width: 90%;
+  }
+
+  .profile-left {
+    width: 100%;
+  }
+
+  .profile-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-right h3 {
+    margin-top: 20px;
+  }
+
+  .profile-right p {
+    margin-bottom: 0;
+  }
+
+  /* Contact */
+
+  .contact-list {
+    width: 90%;
+  }
+
+  .contact-list i {
+    margin: 0 4px;
+  }
+
+  .contact-left {
+    width: 100%;
+  }
+
+  .contact-right {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .contact-content {
+    text-align: center;
+  }
 }
